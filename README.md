@@ -14,16 +14,16 @@ A comprehensive e-learning platform where students and professionals create and 
 - **Admin Panel** - Content moderation and analytics
 - **Real-time Chat** - Live discussions and notifications
 
-## 🏗️ Architecture
+## ��️ Architecture
 
-\`\`\`
+```
 skillhive-platform/
 ├── frontend/          # Next.js React application
 ├── backend/           # Node.js Express API
 ├── database/          # PostgreSQL schema and seeds
 ├── shared/            # Shared TypeScript types
 └── docker-compose.yml # Development environment
-\`\`\`
+```
 
 ## 🛠️ Tech Stack
 
@@ -56,20 +56,20 @@ skillhive-platform/
 ### Development Setup
 
 1. **Clone the repository**
-\`\`\`bash
+```bash
 git clone <repository-url>
 cd skillhive-platform
-\`\`\`
+```
 
 2. **Environment Setup**
-\`\`\`bash
+```bash
 # Copy environment files
 cp frontend/.env.example frontend/.env.local
 cp backend/.env.example backend/.env
-\`\`\`
+```
 
 3. **Database Setup**
-\`\`\`bash
+```bash
 # Start PostgreSQL (or use Docker)
 docker-compose up -d postgres
 
@@ -78,10 +78,10 @@ cd backend
 npm install
 npx prisma migrate dev
 npx prisma db seed
-\`\`\`
+```
 
 4. **Start Development Servers**
-\`\`\`bash
+```bash
 # Terminal 1 - Backend
 cd backend
 npm install
@@ -91,7 +91,7 @@ npm run dev
 cd frontend
 npm install
 npm run dev
-\`\`\`
+```
 
 5. **Access the Application**
 - Frontend: http://localhost:3000
@@ -100,7 +100,7 @@ npm run dev
 
 ### Docker Development
 
-\`\`\`bash
+```bash
 # Start all services
 docker-compose up -d
 
@@ -109,12 +109,12 @@ docker-compose logs -f
 
 # Stop services
 docker-compose down
-\`\`\`
+```
 
 ## 📁 Project Structure
 
 ### Frontend Structure
-\`\`\`
+```
 frontend/
 ├── src/
 │   ├── app/                 # Next.js App Router pages
@@ -125,10 +125,10 @@ frontend/
 │   └── types/               # TypeScript type definitions
 ├── public/                  # Static assets
 └── package.json
-\`\`\`
+```
 
 ### Backend Structure
-\`\`\`
+```
 backend/
 ├── src/
 │   ├── controllers/         # Route handlers
@@ -140,32 +140,32 @@ backend/
 │   └── types/               # TypeScript types
 ├── prisma/                  # Database schema and migrations
 └── package.json
-\`\`\`
+```
 
 ## 🔧 Configuration
 
 ### Environment Variables
 
 #### Frontend (.env.local)
-\`\`\`env
+```env
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 NEXT_PUBLIC_SOCKET_URL=http://localhost:5000
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
-\`\`\`
+```
 
 #### Backend (.env)
-\`\`\`env
+```env
 DATABASE_URL=postgresql://user:password@localhost:5432/skillhive
 JWT_SECRET=your-jwt-secret
 GOOGLE_CLIENT_ID=your-google-client-id
 GOOGLE_CLIENT_SECRET=your-google-client-secret
 STRIPE_SECRET_KEY=sk_test_...
 CLOUDINARY_URL=cloudinary://...
-\`\`\`
+```
 
 ## 🧪 Testing
 
-\`\`\`bash
+```bash
 # Frontend tests
 cd frontend
 npm run test
@@ -176,13 +176,13 @@ npm run test
 
 # E2E tests
 npm run test:e2e
-\`\`\`
+```
 
 ## 🚀 Deployment
 
 ### Production Build
 
-\`\`\`bash
+```bash
 # Build frontend
 cd frontend
 npm run build
@@ -190,17 +190,17 @@ npm run build
 # Build backend
 cd backend
 npm run build
-\`\`\`
+```
 
 ### Docker Production
 
-\`\`\`bash
+```bash
 # Build production images
 docker-compose -f docker-compose.prod.yml build
 
 # Deploy
 docker-compose -f docker-compose.prod.yml up -d
-\`\`\`
+```
 
 ## 📊 API Documentation
 
