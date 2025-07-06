@@ -1,0 +1,46 @@
+// Mock courses data
+const courses = [
+  {
+    id: 1,
+    title: "Complete React Development Course",
+    instructor: "Sarah Johnson",
+    description: "Master React from basics to advanced concepts including hooks, context, and testing.",
+    thumbnail: "/placeholder.svg?height=200&width=300",
+    category: "Web Development",
+    level: "Intermediate",
+    duration: "8 hours",
+    students: 1234,
+    rating: 4.8,
+    reviews: 156,
+    price: "Free",
+    tags: ["React", "JavaScript", "Frontend"],
+    createdAt: "2024-11-15T00:00:00Z",
+    updatedAt: "2024-12-15T00:00:00Z"
+  },
+  {
+    id: 2,
+    title: "Node.js Backend Mastery",
+    instructor: "Mike Chen",
+    description: "Build scalable backend applications with Node.js, Express, and MongoDB.",
+    thumbnail: "/placeholder.svg?height=200&width=300",
+    category: "Backend Development",
+    level: "Advanced",
+    duration: "12 hours",
+    students: 892,
+    rating: 4.9,
+    reviews: 203,
+    price: "$49",
+    tags: ["Node.js", "Express", "MongoDB"],
+    createdAt: "2024-11-20T00:00:00Z",
+    updatedAt: "2024-12-10T00:00:00Z"
+  },
+  {
+    id: 3,
+    title: "UI/UX Design Fundamentals",
+    instructor: "Emma Davis",
+    description: "Learn design principles, user research, and prototyping with Figma.",
+    thumbnail: "/placeholder.svg?height=200&width=300",
+    category: "Design",
+    level: "Beginner",
+    duration: "6 hours",\
+    students: 2156,
