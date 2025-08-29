@@ -4,7 +4,7 @@ import type React from "react"
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
-import { AuthProvider } from "@/context/auth-context"
+import { AuthProvider } from "../context/auth-context"
 import { ThemeProvider } from "next-themes"
 import { useState } from "react"
 

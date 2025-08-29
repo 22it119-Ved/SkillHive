@@ -37,19 +37,19 @@ export const authApi = {
     return response.data
   },
 
-  async register(data: {
+  async signup(data: {
     name: string
     email: string
     password: string
-    role: "learner" | "instructor"
+    role: "student" | "faculty"
   }) {
-    const response = await api.post("/auth/register", data)
+    const response = await api.post("/auth/signup", data)
     return response.data
   },
 
   async getProfile(): Promise<User> {
-    const response = await api.get("/auth/profile")
-    return response.data
+    const response = await api.get("/auth/me")
+    return response.data.user
   },
 
   async updateProfile(data: Partial<User>) {

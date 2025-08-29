@@ -20,20 +20,45 @@ export default function LoginPage() {
   })
   const { toast } = useToast()
 
+  const allowedUsers = [
+    { email: "abc@example.com", name: "ABC User", role: "learner" },
+    { email: "admin@skillhive.com", name: "Admin User", role: "admin" },
+    { email: "faculty@skillhive.com", name: "Faculty Smith", role: "faculty" },
+  ]
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false)
-      toast({
-        title: "Login Successful",
-        description: "Welcome back to SkillHive!",
-      })
-      // Redirect to dashboard
-      window.location.href = "/dashboard"
-    }, 1500)
+    const matchedUser = allowedUsers.find(
+      (u) => formData.email === u.email && formData.password === "password"
+    )
+
+    if (matchedUser) {
+      // Store user data in localStorage
+      localStorage.setItem("userName", matchedUser.name)
+      localStorage.setItem("userEmail", matchedUser.email)
+      localStorage.setItem("userRole", matchedUser.role)
+      localStorage.setItem("token", "dummy-token-" + Date.now()) // Dummy token for demo
+      
+      setTimeout(() => {
+        setIsLoading(false)
+        toast({
+          title: `Login Successful (${matchedUser.role})`,
+          description: `Welcome back, ${matchedUser.name}!`,
+        })
+        window.location.href = "/dashboard"
+      }, 1000)
+    } else {
+      setTimeout(() => {
+        setIsLoading(false)
+        toast({
+          title: "Login Failed",
+          description: "Invalid email or password. Use one of the allowed dummy accounts.",
+          variant: "destructive",
+        })
+      }, 1000)
+    }
   }
 
   const handleGoogleLogin = () => {

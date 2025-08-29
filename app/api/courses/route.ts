@@ -42,5 +42,13 @@ const courses = [
     thumbnail: "/placeholder.svg?height=200&width=300",
     category: "Design",
     level: "Beginner",
-    duration: "6 hours",\
+    duration: "6 hours",
     students: 2156,
+    rating: 4.7,
+    reviews: 120,
+    price: "Free",
+    tags: ["Design", "Figma"],
+    createdAt: "2024-11-25T00:00:00Z",
+    updatedAt: "2024-12-05T00:00:00Z"
+  },
+]

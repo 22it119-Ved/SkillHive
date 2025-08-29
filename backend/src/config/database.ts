@@ -1,40 +1,28 @@
-import { PrismaClient } from "@prisma/client"
-import { logger } from "../utils/logger"
+import mongoose from "mongoose";
+import { logger } from "../utils/logger";
 
-declare global {
-  var __prisma: PrismaClient | undefined
-}
-
-export const prisma =
-  globalThis.__prisma ||
-  new PrismaClient({
-    log: ["query", "info", "warn", "error"],
-  })
-
-if (process.env.NODE_ENV !== "production") {
-  globalThis.__prisma = prisma
-}
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/skillhive";
 
 export const connectDatabase = async () => {
   try {
-    await prisma.$connect()
-    logger.info("Database connected successfully")
+    await mongoose.connect(MONGODB_URI);
+    logger.info("MongoDB connected successfully");
   } catch (error) {
-    logger.error("Database connection failed:", error)
-    throw error
+    logger.error("MongoDB connection failed:", error);
+    throw error;
   }
-}
+};
 
 export const disconnectDatabase = async () => {
   try {
-    await prisma.$disconnect()
-    logger.info("Database disconnected")
+    await mongoose.disconnect();
+    logger.info("MongoDB disconnected");
   } catch (error) {
-    logger.error("Database disconnection failed:", error)
+    logger.error("MongoDB disconnection failed:", error);
   }
-}
+};
 
 // Handle graceful shutdown
 process.on("beforeExit", async () => {
-  await disconnectDatabase()
-})
+  await disconnectDatabase();
+});

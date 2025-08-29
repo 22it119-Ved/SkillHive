@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { BookOpen, Upload, Plus, X, Save, Eye, Video, FileText, ImageIcon } from "lucide-react"
 import Link from "next/link"
 import { useToast } from "@/hooks/use-toast"
+import { Navbar } from "@/components/navbar"
 
 export default function CreateCoursePage() {
   const [courseData, setCourseData] = useState({
@@ -111,26 +112,7 @@ export default function CreateCoursePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <Link href="/" className="flex items-center">
-              <BookOpen className="h-8 w-8 text-indigo-600" />
-              <span className="ml-2 text-2xl font-bold text-gray-900">SkillHive</span>
-            </Link>
-            <div className="flex items-center space-x-4">
-              <Button variant="outline" onClick={handleSaveDraft}>
-                <Save className="h-4 w-4 mr-2" />
-                Save Draft
-              </Button>
-              <Button variant="outline" asChild>
-                <Link href="/dashboard">Dashboard</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navbar showDashboard showSaveDraft onSaveDraft={handleSaveDraft} />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Page Header */}

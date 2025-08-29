@@ -20,7 +20,7 @@ INSERT INTO users (name, email, password_hash, role, bio, skills) VALUES
 ('Dr. Alex Kumar', 'alex@example.com', '$2b$10$example_hash_4', 'instructor', 'Data Scientist and ML Engineer. PhD in Computer Science with focus on machine learning applications.', ARRAY['Python', 'Machine Learning', 'TensorFlow', 'Data Analysis']),
 ('Lisa Wang', 'lisa@example.com', '$2b$10$example_hash_5', 'instructor', 'Mobile app developer with expertise in Flutter and React Native. Built 20+ mobile applications.', ARRAY['Flutter', 'React Native', 'Dart', 'Mobile UI']),
 ('John Smith', 'john@example.com', '$2b$10$example_hash_6', 'instructor', 'Digital marketing expert helping businesses grow online. 10+ years in SEO and content marketing.', ARRAY['SEO', 'Content Marketing', 'Google Analytics', 'Social Media']),
-('Ved Patel', 'ved@example.com', '$2b$10$example_hash_7', 'learner', 'Computer Science student passionate about learning new technologies and building projects.', ARRAY['JavaScript', 'React', 'Python']),
+('Test User', 'test@example.com', '$2b$10$example_hash_7', 'learner', 'Computer Science student passionate about learning new technologies and building projects.', ARRAY['JavaScript', 'React', 'Python']),
 ('Admin User', 'admin@skillhive.com', '$2b$10$example_hash_8', 'admin', 'Platform administrator managing content and user experience.', ARRAY['Platform Management', 'Content Moderation']);
 
 -- Insert sample courses
@@ -102,7 +102,7 @@ INSERT INTO notifications (user_id, title, message, type, related_id) VALUES
 (7, 'Course Completed!', 'Congratulations! You have completed the UI/UX Design Fundamentals course.', 'course_completion', 3),
 (7, 'New Reply', 'Sarah Johnson replied to your discussion about useEffect cleanup.', 'discussion_reply', 1),
 (7, 'Certificate Available', 'Your certificate for UI/UX Design Fundamentals is now available for download.', 'certificate', 3),
-(1, 'New Enrollment', 'Ved Patel has enrolled in your React Development course.', 'enrollment', 1);
+(1, 'New Enrollment', 'Test User has enrolled in your React Development course.', 'enrollment', 1);
 
 -- Update course statistics (ratings, student counts)
 UPDATE courses SET 

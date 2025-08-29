@@ -22,6 +22,7 @@ import {
   Calendar,
 } from "lucide-react"
 import Link from "next/link"
+import { Navbar } from "@/components/navbar"
 
 export default function CourseDetailPage() {
   const [isEnrolled, setIsEnrolled] = useState(false)
@@ -129,25 +130,7 @@ export default function CourseDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <Link href="/" className="flex items-center">
-              <BookOpen className="h-8 w-8 text-indigo-600" />
-              <span className="ml-2 text-2xl font-bold text-gray-900">SkillHive</span>
-            </Link>
-            <div className="flex items-center space-x-4">
-              <Link href="/courses">
-                <Button variant="outline">Back to Courses</Button>
-              </Link>
-              <Link href="/dashboard">
-                <Button variant="outline">Dashboard</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navbar showBackToCourses showDashboard />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid lg:grid-cols-3 gap-8">
